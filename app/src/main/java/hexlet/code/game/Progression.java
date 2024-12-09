@@ -9,6 +9,7 @@ public class Progression {
     private static final int MAX_STEP = 10;
     private static final int MIN_LENGTH = 5;
     private static final int MAX_LENGTH = 10;
+    private static final int MAX_RANDOM_NUM = 50;
 
     public static void startProgressionGame() {
         String[][] progData = new String[Engine.NUMBER_OF_ROUNDS_IN_GAME][Engine.NUMBER_OF_ELEMENTS_FOR_GAME_ARRAY];
@@ -29,7 +30,7 @@ public class Progression {
     }
 
     private static String[] getProgression(int step, int length) {
-        int start = Utils.getRandomNumber(1, 50);
+        int start = Utils.getRandomNumber(MIN_STEP, MAX_RANDOM_NUM);
         String[] progression = new String[length];
         for (int i = 0; i < length; i++) {
             progression[i] = Integer.toString(start + i * step);
